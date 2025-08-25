@@ -5,6 +5,7 @@ import { HeroSection } from "~/components/sections/hero"
 import { ImageSection } from "~/components/sections/image"
 import { PreModelsSection } from "~/components/sections/pre-models"
 import { SlidesSection } from "~/components/sections/slides"
+import { Footer } from "~/components/layout/footer"
 
 export const LandingPage = () => {
     return(
@@ -17,6 +18,7 @@ export const LandingPage = () => {
             <CTASection />
             <PreModelsSection />
             <CTASection />
+            <Footer />
         </main>
     )
 }
