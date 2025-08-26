@@ -18,8 +18,8 @@ export const PreModelsSection = () => {
           </div>
           <h3 className="h3 home_title__svGc_">AW-2</h3>
           <div className="home_content__fn2aj">
-            <img src="//images.ctfassets.net/mluanev0pzgf/34Ve7t1bwSqSmzP8DkueqU/779114849e5f5078c5d26f3614407caf/Group_7765.png?q=95" alt="" className="home_img-large__12lSA"/>
-            <img src="//images.ctfassets.net/mluanev0pzgf/41zv0aAtWEXL1j89pdiJzF/6be5101d48e830964b3a372f9e790bc8/Frame_7862.png?q=95" alt="" className="home_img-small__A4lAB"/>
+            <img src="/aw2-1.png" alt="" className="home_img-large__12lSA"/>
+            <img src="/aw2-2.png" alt="" className="home_img-small__A4lAB"/>
             <p className="home_caption__D0wAC ol-3-col xs">The AW-2 brings autonomous finish welding to small and mid-size parts. The flexibility of the AW-2 eliminates the need for custom, rigid fixturing, and precise part placement.</p>
           </div>
         </section>
@@ -30,8 +30,8 @@ export const PreModelsSection = () => {
           </div>
           <h3 className="h3 home_title__svGc_">AW-3</h3>
           <div className="home_content__fn2aj">
-            <img src="//images.ctfassets.net/mluanev0pzgf/3FvOuZxZiMs9lHQHoznjWT/34cf997250b0917fbfed39839b14826a/Boom_Arm_Cell_Orthographic_Perspective__1_.png?q=95" alt="" className="home_img-large__12lSA"/>
-            <img src="//images.ctfassets.net/mluanev0pzgf/2srW5MC8ACP5KRBzp6yABR/6ff91e9721e36cf9c4e3720ed71ea1b0/Boom_Arm_Cell_Orthographic_Perspective_2.png?q=95" alt="" className="home_img-small__A4lAB"/>
+            <img src="/aw3-1.png" alt="" className="home_img-large__12lSA"/>
+            <img src="/aw3-2.png" alt="" className="home_img-small__A4lAB"/>
             <p className="home_caption__D0wAC ol-3-col xs">The AW-3 brings autonomous finish welding to longer parts that don't fit in smaller welding cells. The AW-3 can have one or two welding zones, where one side can weld while the other side loads and unloads.</p>
           </div>
         </section>

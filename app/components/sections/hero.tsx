@@ -2,7 +2,7 @@ export const HeroSection = () => {
     return(
         <section className="home_hero__vJLkN" id="hero">
         <img 
-          src="//images.ctfassets.net/mluanev0pzgf/3LNzHTEmYMN4thtInYMRU2/2ddc9cf6622954465319f81414317096/hero.png?q=95" 
+          src="/hero.png" 
           alt="" 
           className="home_hero-image__QFiue" 
           data-scroll="true" 

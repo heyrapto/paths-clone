@@ -7,14 +7,7 @@ export const HowItWorksSection = () => {
       offset: "0%",
       description:
         "The Path system scans and creates a 3D model of each part. Our proprietary sensors are built to see highly reflective surfaces and survive harsh manufacturing environments.",
-      svg: (
-        <svg viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g className="svg-content">
-            {/* Example placeholder content */}
-            <circle cx="540" cy="540" r="200" stroke="currentColor" strokeWidth="4" />
-          </g>
-        </svg>
-      ),
+        svg: <img src="/public/how.svg" alt="It Sees" className="h-16 w-16" />,
     },
     {
       id: "it-understands",
@@ -67,7 +60,9 @@ export const HowItWorksSection = () => {
             </div>
 
             {/* Optional SVG */}
-            {slide.svg && <div className="illustration_svg__K_MDy">{slide.svg}</div>}
+            {/* <div className="illustration_how-image__gYZb2">
+            </div> */}
+            {slide.svg && <div className="illustration_svg__K_MDy ">{slide.svg}</div>}
 
             <aside>
               <p className="s">{slide.description}</p>
