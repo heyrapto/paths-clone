@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Footer = () => {
+    const [videoModalOpen, setVideoModalOpen] = useState(false);
+    const [currentVideoId, setCurrentVideoId] = useState('');
+
   return (
+    <>
+    <section className="home_prefooter-img__mb9xG">
+          <img src="/home-inner-2.png" alt=""/>
+        </section>
+
+        <div 
+          style={{opacity: videoModalOpen ? 1 : 0, pointerEvents: videoModalOpen ? 'all' : 'none'}} 
+          className="home_video-modal__KCXSH"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 36 36" 
+            className="home_close__6BR66"
+            onClick={() => setVideoModalOpen(false)}
+          >
+            <path stroke="currentColor" strokeWidth="2" d="m1 1 34 34m0-34L1 35"></path>
+          </svg>
+          <article
+  className="yt-lite"
+  data-title="Path Robotics Video"
+  style={{
+    backgroundImage: `url(https://i.ytimg.com/vi/${currentVideoId}/hqdefault.jpg)`,
+    ['--aspect-ratio' as any]: '56.25%',
+  }}
+>
+  <button
+    type="button"
+    className="lty-playbtn"
+    aria-label="Watch Path Robotics Video"
+  ></button>
+</article>
+
+        </div>
     <footer className="footer_footer__SH230">
       <div className="footer_inner__hdEE8">
         {/* Brand / Logo + Address */}
@@ -200,5 +237,6 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
