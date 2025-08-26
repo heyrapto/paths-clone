@@ -44,11 +44,16 @@ const slides = [
             <div
               key={index}
               className="illustration_slide__aNxYI"
-              style={isDesktop ? {top: `cal(10vh + ${index*5}em)`, marginBottom: `${(slides.length - index - 1)*5}rem`, }: {top:0}}
+              style={isDesktop ? {top: `calc(10vh + ${index*5}em)`, marginBottom: `${(slides.length - index - 1)*5}rem`} : {top:0}}
               id={slide.id}
             >
               <div
                 className="illustration_content__5njKj"
+                style={isDesktop ? {
+                    position: 'sticky',
+                    top: `calc(10vh + ${index * 2}rem)`,
+                    zIndex: slides.length - index
+                  } : {}}
               >
                 <p className="text-micro text-accent">{slide.number}</p>
                 <p className="h3">{slide.title}</p>
