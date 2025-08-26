@@ -34,13 +34,13 @@ export const HeroSection = () => {
             if (scrollProgress <= catchUpProgress) {
                 // Phase 1: Only "Truly" moves down to catch up
                 // "Autonomous Welding" stays at 0
-                header1Movement = -50 + (scrollProgress / catchUpProgress) * 200;
+                header1Movement = -50 + (scrollProgress / catchUpProgress) * 150;
                 header2Movement = 0;
             } else {
                 // Phase 2: Both move together
                 // "Truly" is now at level 0, both move down together
                 const syncProgress = (scrollProgress - catchUpProgress) / (1 - catchUpProgress);
-                header1Movement; // so they sync and "truly" doesn't reset to it's original state
+                header1Movement = 100 + (syncProgress * maxMovement); // Start from synced position (100px)
                 header2Movement = syncProgress * maxMovement;
             }
             
