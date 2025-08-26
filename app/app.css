@@ -1565,6 +1565,7 @@ input {
 
 .illustration_slide__aNxYI {
   display: grid;
+  position: sticky;
   grid-template-columns: repeat(20,1fr);
   grid-gap: var(--grid-gap);
   padding-top: var(--y-spacer);

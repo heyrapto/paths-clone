@@ -1,31 +1,24 @@
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
-    const heroRef = useRef<HTMLDivElement>(null);
+    const topHeaderRef = useRef<HTMLDivElement>(null);
+    const bottomHeaderRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-
-        let tl = gsap.timeline({
+    useGSAP(() => {
+        gsap.to('#header_1', {
+            yPercent: 200,
             scrollTrigger: {
-                trigger: '.h1',
-                pin: true,
-                start: 'top top',
-                end: '+=500',
-                scrub: 1,
-                snap: {
-                    snapTo: 'labels',
-                    duration: { min: 0.2, max: 3 },
-                    delay: 0.2,
-                    ease: 'power1.inOut'
-                }
-            }
-        });
-    }, [])
+                scrub: true
+            },
+        })
+    })
 
     return (
-        <section className="home_hero__vJLkN" id="hero" ref={heroRef}>
+        <section className="home_hero__vJLkN" id="hero">
             <img
                 src="/hero.png"
                 alt=""
@@ -34,10 +27,14 @@ export const HeroSection = () => {
                 data-scroll-speed="10"
             />
             <div className="home_heading__56sD2">
-                <h2 className="h1" data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="0, 66%">
+                <h2 className="h1" id="header_1"
+                //  data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="0, 66%"
+                 >
                     Truly
                 </h2>
-                <h1 className="h1 ol-5-col" data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="16%, 50%">
+                <h1 className="h1 ol-5-col" id="header_2"  
+                // data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="16%, 50%"
+                >
                     Autonomous Welding
                 </h1>
             </div>

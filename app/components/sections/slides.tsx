@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const slidesData = [
   {
@@ -19,24 +19,84 @@ const slidesData = [
 ];
 
 export const SlidesSection = () => {
+  const [activeSlide, setActiveSlide] = useState<any>(0);
+  const sectionRef = useRef<HTMLDivElement | any>(null);
+  const slideRefs = useRef<HTMLDivElement | any>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionBottom = sectionRect.bottom;
+      const viewportHeight = window.innerHeight;
+
+      // Check if section is in view
+      if (sectionTop > viewportHeight || sectionBottom < 0) return;
+
+      // Find which slide is most visible
+      let maxVisibility = 0;
+      let mostVisibleSlide = 0;
+
+      slideRefs.current.forEach((slide: any, index: number) => {
+        if (!slide) return;
+        
+        const slideRect = slide.getBoundingClientRect();
+        const slideTop = slideRect.top;
+        const slideBottom = slideRect.bottom;
+        
+        // Calculate visibility percentage
+        const visibleTop = Math.max(0, Math.min(slideBottom, viewportHeight) - Math.max(slideTop, 0));
+        const slideHeight = slideRect.height;
+        const visibility = visibleTop / slideHeight;
+        
+        if (visibility > maxVisibility) {
+          maxVisibility = visibility;
+          mostVisibleSlide = index;
+        }
+      });
+
+      setActiveSlide(mostVisibleSlide);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check
+    handleScroll();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="home_slides__IpXtK" id="slides">
+    <section 
+      ref={sectionRef}
+      className="home_slides__IpXtK" 
+      id="slides"
+    >
       <div className="home_inner__L8_72">
-        {/* Indicators */}
+        {/* Sticky Indicators */}
         <ul
-          className="indicators_indicators__ShvfX is-inview"
-          data-scroll="true"
-          data-scroll-sticky="true"
-          data-scroll-target="#slides"
+          className="indicators_indicators__ShvfX is-inview sticky"
           style={{
-            transform:
-              "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)",
+            position: 'sticky',
+            top: '20vh',
+            zIndex: 10,
+            transform: "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)",
           }}
         >
           {slidesData.map((_, i) => (
             <li
               key={i}
-              className={i === 0 ? "indicators_active__YPE0D" : ""}
+              className={i === activeSlide ? "indicators_active__YPE0D" : ""}
+              style={{
+                transition: 'opacity 0.3s ease',
+                opacity: i === activeSlide ? 1 : 0.5
+              }}
             >
               {String(i + 1).padStart(2, "0")}
             </li>
@@ -47,18 +107,15 @@ export const SlidesSection = () => {
         {slidesData.map((slide, index) => (
           <div
             key={slide.id}
-            data-scroll="true"
-            data-scroll-offset="100%"
-            data-scroll-speed=".5"
-            data-scroll-delay="0.05"
-            data-scroll-id={slide.id}
+            ref={el => slideRefs.current[index] = el as any}
             id={slide.id}
             className="full-height-slide_wrapper__eSiU7 is-inview"
             style={{
               transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${
                 index * 60
               }, 0, 1)`,
-              opacity: index === 0 ? 0.75 : 1,
+              opacity: index === activeSlide ? 0.75 : 1,
+              minHeight: '100vh', // Ensure each slide takes full viewport height
             }}
           >
             <div className="home_slide__nf2Eh">

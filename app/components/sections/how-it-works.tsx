@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import { mainslides } from "~/assets";
 
 const slides = [
@@ -31,6 +32,7 @@ const slides = [
   ];
   
   export const HowItWorksSection = () => {
+    const isDesktop = useMediaQuery({ minWidth: "48rem" })
     return (
       <section className="home_how-slides__ZIMoN" id="how-slides">
         <div aria-hidden="true" className="stripes_wrapper__rRsa5">
@@ -38,22 +40,15 @@ const slides = [
         </div>
   
         <div className="illustration_inner__K_MDy">
-          {slides.map((slide) => (
+          {slides.map((slide, index) => (
             <div
-              key={slide.id}
+              key={index}
               className="illustration_slide__aNxYI"
-              data-scroll="true"
-              data-scroll-id={slide.id}
-              data-scroll-call={slide.id}
-              data-scroll-offset="50%"
+              style={isDesktop ? {top: `cal(10vh + ${index*5}em)`, marginBottom: `${(slides.length - index - 1)*5}rem`, }: {top:0}}
               id={slide.id}
             >
               <div
                 className="illustration_content__5njKj"
-                data-scroll="true"
-                data-scroll-sticky="true"
-                data-scroll-target="#how-slides"
-                data-scroll-offset={slide.scrollOffset}
               >
                 <p className="text-micro text-accent">{slide.number}</p>
                 <p className="h3">{slide.title}</p>
@@ -71,5 +66,4 @@ const slides = [
         </div>
       </section>
     );
-  };
-  
+};

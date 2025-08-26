@@ -1,6 +1,6 @@
 import LandingPage  from "~/landing";
 import type { Route } from "./+types/home";
-import { useEffect } from "react";
+import { ReactLenis } from "lenis/react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,13 +10,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  useEffect(() => {
-    (
-      async() => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
-        const locomotiveScroll = new LocomotiveScroll();
-      }
-    )
-  }, [])
-  return <LandingPage />
+  return ( 
+  <ReactLenis root>
+  <LandingPage /> 
+  </ReactLenis>
+)
 }
