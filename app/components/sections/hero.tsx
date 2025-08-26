@@ -1,40 +1,77 @@
 import { useEffect, useRef } from "react";
-import { useGSAP } from "@gsap/react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger)
 
 export const HeroSection = () => {
-    const topHeaderRef = useRef<HTMLDivElement>(null);
-    const bottomHeaderRef = useRef<HTMLDivElement>(null);
+    const heroRef = useRef<HTMLDivElement>(null);
+    const header1Ref = useRef<HTMLHeadElement | any>(null);
+    const header2Ref = useRef<HTMLHeadElement | any>(null);
 
-    useGSAP(() => {
-        gsap.to('#header_1', {
-            yPercent: 200,
-            scrollTrigger: {
-                scrub: true
-            },
-        })
-    })
+    useEffect(() => {
+        const hero = heroRef.current;
+        const header1 = header1Ref.current;
+        const header2 = header2Ref.current;
+        
+        if (!hero || !header1 || !header2) return;
+
+        // Set initial position for "Truly" to be 50px above
+        header1.style.transform = 'translateY(-50px)';
+        header2.style.transform = 'translateY(0px)';
+
+        const handleScroll = () => {
+            const heroRect = hero.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Calculate how much of the hero section has been scrolled
+            const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / viewportHeight));
+            
+            // Total movement distance after sync (adjust as needed)
+            const maxMovement = 500;
+            
+            // Calculate the progress needed for "Truly" to reach "Autonomous Welding" level
+            const catchUpProgress = 150 / (150 + maxMovement); // 150px out of total movement
+            
+            let header1Movement, header2Movement;
+            
+            if (scrollProgress <= catchUpProgress) {
+                // Phase 1: Only "Truly" moves down to catch up
+                // "Autonomous Welding" stays at 0
+                header1Movement = -50 + (scrollProgress / catchUpProgress) * 200;
+                header2Movement = 0;
+            } else {
+                // Phase 2: Both move together
+                // "Truly" is now at level 0, both move down together
+                const syncProgress = (scrollProgress - catchUpProgress) / (1 - catchUpProgress);
+                header1Movement; // so they sync and "truly" doesn't reset to it's original state
+                header2Movement = syncProgress * maxMovement;
+            }
+            
+            header1.style.transform = `translateY(${header1Movement}px)`;
+            header2.style.transform = `translateY(${header2Movement}px)`;
+        };
+
+        // Add scroll listener
+        window.addEventListener('scroll', handleScroll);
+        
+        // Initial call
+        handleScroll();
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <section className="home_hero__vJLkN" id="hero">
+        <section className="home_hero__vJLkN" id="hero" ref={heroRef}>
             <img
                 src="/hero.png"
                 alt=""
                 className="home_hero-image__QFiue"
-                data-scroll="true"
-                data-scroll-speed="10"
             />
             <div className="home_heading__56sD2">
-                <h2 className="h1" id="header_1"
-                //  data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="0, 66%"
-                 >
+                <h2 className="h1" id="header_1" ref={header1Ref}>
                     Truly
                 </h2>
-                <h1 className="h1 ol-5-col" id="header_2"  
-                // data-scroll="true" data-scroll-sticky="true" data-scroll-target="#hero" data-scroll-offset="16%, 50%"
-                >
+                <h1 className="h1 ol-5-col" id="header_2" ref={header2Ref}>
                     Autonomous Welding
                 </h1>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const slidesData = [
   {
@@ -115,7 +115,7 @@ export const SlidesSection = () => {
                 index * 60
               }, 0, 1)`,
               opacity: index === activeSlide ? 0.75 : 1,
-              minHeight: '100vh', // Ensure each slide takes full viewport height
+              minHeight: '100vh', 
             }}
           >
             <div className="home_slide__nf2Eh">
