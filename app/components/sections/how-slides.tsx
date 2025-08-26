@@ -1,3 +1,5 @@
+import { HowItWorksSection } from "./how-it-works"
+
 export const HowSlidesSection = () => {
     return(
         <>
@@ -15,7 +17,7 @@ export const HowSlidesSection = () => {
           <p className="h2 text-muted">With the Path Robotics system, you'll never have to worry about rework, part placement, perfect parts, or robot programming ever again.</p>
         </section>
 
-        <section className="home_how-slides__ZIMoN" id="how-slides">
+        {/* <section className="home_how-slides__ZIMoN" id="how-slides">
           <div aria-hidden="true" className="stripes_wrapper__rRsa5">
             <span className="stripes_line__0mC2c stripes_f__mnJYv"></span>
           </div>
@@ -51,7 +53,9 @@ export const HowSlidesSection = () => {
               </aside>
             </div>
           </div>
-        </section>
+        </section> */}
+        <HowItWorksSection />
+
         </>
     )
 }

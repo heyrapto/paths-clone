@@ -14,20 +14,13 @@ const LandingPage = () => {
     <div style={{ ["--bg" as any]: "var(--black)", ["--fg" as any]: "var(--white)" }}>
       <main style={{backgroundColor:"var(--bg)",color:"var(--fg)"}}>
         <Navbar />
-
-       <HeroSection />
-
+        <HeroSection />
         <SlidesSection />
-
         <HowSlidesSection />
-
-       <FirstCTASection />
-
+        <FirstCTASection />
         <PreModelsSection />
-
         <FeaturesSection />
         <SecondCTASection />
-
         <Footer />
       </main>
     </div>

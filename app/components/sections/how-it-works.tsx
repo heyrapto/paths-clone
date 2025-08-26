@@ -1,75 +1,75 @@
-export const HowItWorksSection = () => {
-    const howItWorksData = [
+import { mainslides } from "~/assets";
+
+const slides = [
     {
       id: "it-sees",
-      step: "01",
+      number: "01",
       title: "It Sees",
-      offset: "0%",
       description:
         "The Path system scans and creates a 3D model of each part. Our proprietary sensors are built to see highly reflective surfaces and survive harsh manufacturing environments.",
-        svg: <img src="/public/how.svg" alt="It Sees" className="h-16 w-16" />,
+      scrollOffset: "0%",
+      icon: mainslides,
     },
     {
       id: "it-understands",
-      step: "02",
+      number: "02",
       title: "It Understands",
-      offset: "90%",
       description:
         "The Path system is built on proprietary AI. It analyzes the sensor data on the fly to understand each part individually. There's no need for perfect, identical parts or precise positioning in the cell.",
-      svg: null, // if no SVG
+      scrollOffset: "90%",
+      icon: null,
     },
     {
       id: "it-welds",
-      step: "03",
+      number: "03",
       title: "It Welds",
-      offset: "180%",
       description:
         "The Path system understands welding and adapts throughout the process. As it goes, it creates optimal robotic paths and part positioning to produce high quality welds.",
-      svg: null,
+      scrollOffset: "180%",
+      icon: null,
     },
   ];
   
-  return (
-    <section className="home_how-slides__ZIMoN" id="how-slides">
-      {/* Stripes wrapper */}
-      <div aria-hidden="true" className="stripes_wrapper__rRsa5">
-        <span className="stripes_line__0mC2c stripes_f__mnJYv"></span>
-      </div>
-
-      {/* Illustration inner container */}
-      <div className="illustration_inner__K_MDy">
-        {howItWorksData.map((slide, i) => (
-          <div
-            key={slide.id}
-            className="illustration_slide__aNxYI is-inview"
-            data-scroll="true"
-            data-scroll-id={slide.id}
-            data-scroll-call={slide.id}
-            data-scroll-offset="50%"
-            id={slide.id}
-          >
+  export const HowItWorksSection = () => {
+    return (
+      <section className="home_how-slides__ZIMoN" id="how-slides">
+        <div aria-hidden="true" className="stripes_wrapper__rRsa5">
+          <span className="stripes_line__0mC2c stripes_f__mnJYv"></span>
+        </div>
+  
+        <div className="illustration_inner__K_MDy">
+          {slides.map((slide) => (
             <div
-              className="illustration_content__5njKj is-inview"
+              key={slide.id}
+              className="illustration_slide__aNxYI"
               data-scroll="true"
-              data-scroll-sticky="true"
-              data-scroll-target="#how-slides"
-              data-scroll-offset={slide.offset}
+              data-scroll-id={slide.id}
+              data-scroll-call={slide.id}
+              data-scroll-offset="50%"
+              id={slide.id}
             >
-              <p className="text-micro text-accent">{slide.step}</p>
-              <p className="h3">{slide.title}</p>
+              <div
+                className="illustration_content__5njKj"
+                data-scroll="true"
+                data-scroll-sticky="true"
+                data-scroll-target="#how-slides"
+                data-scroll-offset={slide.scrollOffset}
+              >
+                <p className="text-micro text-accent">{slide.number}</p>
+                <p className="h3">{slide.title}</p>
+                <div className="illustration_how-illustration__BLE8s">
+                  <div>
+                   {slide.icon && (<img src={slide.icon} alt="" className="" />)} 
+                    </div>
+                </div>
+              </div>
+              <aside>
+                <p className="s">{slide.description}</p>
+              </aside>
             </div>
-
-            {/* Optional SVG */}
-            {/* <div className="illustration_how-image__gYZb2">
-            </div> */}
-            {slide.svg && <div className="illustration_svg__K_MDy ">{slide.svg}</div>}
-
-            <aside>
-              <p className="s">{slide.description}</p>
-            </aside>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+          ))}
+        </div>
+      </section>
+    );
+  };
+  
