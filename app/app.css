@@ -1745,20 +1745,6 @@ input {
   grid-column: span 5
 }
 
-.home_no-link__EP0Uu:hover {
-  color: var(--fg)
-}
-
-.home_image__Ihy8J {
-  position: relative
-}
-
-.home_image-intermission__j98AZ {
-  margin: 0 var(--x-spacer-negative);
-  padding-top: var(--y-spacer-3);
-  position: relative
-}
-
 .home_how__tz4hY {
   color: var(--fg);
   padding: var(--y-spacer) 1.389vw var(--y-spacer-4) 1.389vw
@@ -1786,6 +1772,20 @@ input {
 
 .home_first-cta__pTCzU .home_action__ojUj6 {
   grid-column: span 5
+}
+
+.home_no-link__EP0Uu:hover {
+  color: var(--fg)
+}
+
+.home_image__Ihy8J {
+  position: relative
+}
+
+.home_image-intermission__j98AZ {
+  margin: 0 var(--x-spacer-negative);
+  padding-top: var(--y-spacer-3);
+  position: relative
 }
 
 .home_pre-models__5Wvou {

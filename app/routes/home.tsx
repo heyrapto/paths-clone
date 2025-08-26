@@ -1,4 +1,4 @@
-import { LandingPage } from "~/landing";
+import LandingPage  from "~/landing";
 import type { Route } from "./+types/home";
 import { useEffect } from "react";
 
