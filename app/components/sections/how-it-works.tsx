@@ -1,4 +1,4 @@
-import { useMediaQuery } from "react-responsive";
+import { useMobile } from "../../hooks/use-mobile";
 
 const slides = [
     {
@@ -31,8 +31,10 @@ const slides = [
   ];
   
   export const HowItWorksSection = () => {
-    const isDesktop = useMediaQuery({ minWidth: "48rem" })
+    const { isDesktop } = useMobile()
     return (
+      <>
+      {isDesktop ? (
       <section className="home_how-slides__ZIMoN" id="how-slides">
         <div aria-hidden="true" className="stripes_wrapper__rRsa5">
           <span className="stripes_line__0mC2c stripes_f__mnJYv"></span>
@@ -62,12 +64,24 @@ const slides = [
                     </div>
                 </div>
               </div>
-              <aside>
+              <aside
+                style={isDesktop ? {
+                    position: 'sticky',
+                    top: `calc(10vh + ${index * 2}rem)`,
+                    zIndex: slides.length - index
+                  } : {}}
+              >
                 <p className="s">{slide.description}</p>
               </aside>
             </div>
           ))}
         </div>
       </section>
+      ) :
+       (
+        <section></section>
+       )
+    }
+      </>
     );
 };
