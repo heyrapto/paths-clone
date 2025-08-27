@@ -262,14 +262,14 @@ img,video {
 
 @font-face {
   font-family: Pitch Web;
-  src: url(/fonts/pitch-web-regular.woff2) format("woff2"),url(/fonts/pitch-web-regular.woff) format("woff");
+  src: url(/fonts/PitchSans-Regular.woff2) format("woff2"),url(/fonts/PitchSans-Regular.woff) format("woff");
   font-display: block;
   unicode-range: U+000-5ff
 }
 
 @font-face {
   font-family: Suisse Intl;
-  src: url(/fonts/SuisseIntl-Light-WebS.woff2) format("woff2"),url(/fonts/SuisseIntl-Light-WebS.woff) format("woff");
+  src: url(/fonts/SuisseIntl-Light.woff2) format("woff2"),url(/fonts/SuisseIntl-Light.woff) format("woff");
   font-display: block;
   unicode-range: U+000-5ff;
   font-weight: 300
@@ -277,7 +277,7 @@ img,video {
 
 @font-face {
   font-family: Suisse Intl;
-  src: url(/fonts/SuisseIntl-Medium-WebS.woff2) format("woff2"),url(/fonts/SuisseIntl-Medium-WebS.woff) format("woff");
+  src: url(/fonts/SuisseIntl-Medium.woff2) format("woff2"),url(/fonts/SuisseIntl-Medium.woff) format("woff");
   font-display: block;
   font-weight: 400;
   unicode-range: U+000-5ff
