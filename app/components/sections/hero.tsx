@@ -4,17 +4,20 @@ export const HeroSection = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const header1Ref = useRef<HTMLHeadElement | any>(null);
     const header2Ref = useRef<HTMLHeadElement | any>(null);
+    const imageRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         const hero = heroRef.current;
         const header1 = header1Ref.current;
         const header2 = header2Ref.current;
+        const image = imageRef.current;
         
-        if (!hero || !header1 || !header2) return;
+        if (!hero || !header1 || !header2 || !image) return;
 
         // Set initial position for "Truly" to be 50px above
         header1.style.transform = 'translateY(-50px)';
         header2.style.transform = 'translateY(0px)';
+        image.style.transform = 'translateY(0px)';
 
         const handleScroll = () => {
             const heroRect = hero.getBoundingClientRect();
@@ -29,23 +32,28 @@ export const HeroSection = () => {
             // Calculate the progress needed for "Truly" to reach "Autonomous Welding" level
             const catchUpProgress = 150 / (150 + maxMovement); // 150px out of total movement
             
-            let header1Movement, header2Movement;
+            let header1Movement, header2Movement, imageMovement;
             
             if (scrollProgress <= catchUpProgress) {
                 // Phase 1: Only "Truly" moves down to catch up
                 // "Autonomous Welding" stays at 0
+                // Image starts moving up gently
                 header1Movement = -50 + (scrollProgress / catchUpProgress) * 150;
                 header2Movement = 0;
+                imageMovement = -(scrollProgress / catchUpProgress) * 100; // Move up 100px during catch-up phase
             } else {
                 // Phase 2: Both move together
                 // "Truly" is now at level 0, both move down together
+                // Image continues moving up more dramatically
                 const syncProgress = (scrollProgress - catchUpProgress) / (1 - catchUpProgress);
                 header1Movement = 100 + (syncProgress * maxMovement); // Start from synced position (100px)
                 header2Movement = syncProgress * maxMovement;
+                imageMovement = -100 - (syncProgress * 300); // Continue moving up, total of 400px movement
             }
             
             header1.style.transform = `translateY(${header1Movement}px)`;
             header2.style.transform = `translateY(${header2Movement}px)`;
+            image.style.transform = `translateY(${imageMovement}px)`;
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -60,6 +68,7 @@ export const HeroSection = () => {
     return (
         <section className="home_hero__vJLkN" id="hero" ref={heroRef}>
             <img
+                ref={imageRef}
                 src="/hero.png"
                 alt=""
                 className="home_hero-image__QFiue"
