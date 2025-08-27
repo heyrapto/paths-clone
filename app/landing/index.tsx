@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Footer } from '~/components/layout/footer';
 import { Navbar } from '~/components/layout/navbar';
 import { FirstCTASection, SecondCTASection } from '~/components/sections/cta';
@@ -10,8 +9,9 @@ import { SlidesSection } from '~/components/sections/slides';
 import {gsap} from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger)
+
 const LandingPage = () => {
-    gsap.registerPlugin(ScrollTrigger)
   return (
     <div style={{ ["--bg" as any]: "var(--black)", ["--fg" as any]: "var(--white)" }}>
       <main style={{backgroundColor:"var(--bg)",color:"var(--fg)"}}>

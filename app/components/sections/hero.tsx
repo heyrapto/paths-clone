@@ -48,13 +48,10 @@ export const HeroSection = () => {
             header2.style.transform = `translateY(${header2Movement}px)`;
         };
 
-        // Add scroll listener
         window.addEventListener('scroll', handleScroll);
         
-        // Initial call
         handleScroll();
 
-        // Cleanup
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
