@@ -16,7 +16,7 @@ export const HeroSection = () => {
 
         if (!hero || !header1 || !header2 || !image) return;
 
-        // Set initial position for "Truly" to be 50px above
+        // set initial position for "Truly" to be 50px above
         header1.style.transform = 'translateY(-50px)';
         header2.style.transform = 'translateY(0px)';
         image.style.transform = 'translateY(0px)';
@@ -25,28 +25,28 @@ export const HeroSection = () => {
             const heroRect = hero.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
 
-            // Calculate how much of the hero section has been scrolled
+            // calculate how much of the hero section has been scrolled
             const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / viewportHeight));
 
-            // Total movement distance after sync (adjust as needed)
+            // total movement distance after sync (adjust as needed)
             const maxMovement = 500;
 
-            // Calculate the progress needed for "Truly" to reach "Autonomous Welding" level
+            // calculate the progress needed for "truly" to reach "Autonomous Welding" level
             const catchUpProgress = 150 / (150 + maxMovement); // 150px out of total movement
 
             let header1Movement, header2Movement, imageMovement;
 
             if (scrollProgress <= catchUpProgress) {
-                // Phase 1: Only "Truly" moves down to catch up
-                // "Autonomous Welding" stays at 0
-                // Image starts moving up gently
+                // phase 1: only "truly" moves down to catch up
+                // "autonomous Welding" stays at 0
+                // image starts moving up gently
                 header1Movement = -50 + (scrollProgress / catchUpProgress) * 150;
                 header2Movement = 0;
-                imageMovement = -(scrollProgress / catchUpProgress) * 100; // Move up 100px during catch-up phase
+                imageMovement = -(scrollProgress / catchUpProgress) * 100; // move up 100px during catch-up phase
             } else {
-                // Phase 2: Both move together
-                // "Truly" is now at level 0, both move down together
-                // Image continues moving up more dramatically
+                // phase 2: Both move together
+                // "truly" is now at level 0, both move down together
+                // image continues moving up more dramatically
                 const syncProgress = (scrollProgress - catchUpProgress) / (1 - catchUpProgress);
                 header1Movement = 100 + (syncProgress * maxMovement);
                 header2Movement = syncProgress * maxMovement;
