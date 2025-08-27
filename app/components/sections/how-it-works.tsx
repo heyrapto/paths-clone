@@ -1,5 +1,4 @@
 import { useMediaQuery } from "react-responsive";
-import { mainslides } from "~/assets";
 
 const slides = [
     {
@@ -9,7 +8,7 @@ const slides = [
       description:
         "The Path system scans and creates a 3D model of each part. Our proprietary sensors are built to see highly reflective surfaces and survive harsh manufacturing environments.",
       scrollOffset: "0%",
-      icon: mainslides,
+      icon: "/mainslides.svg",
     },
     {
       id: "it-understands",
