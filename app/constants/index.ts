@@ -30,3 +30,27 @@ export const slides = [
       mobileIcon: "/mobile/it-welds.svg"
     },
 ];
+
+// footer.data.ts
+export const socialLinks = [
+    { name: "Facebook", url: "https://www.facebook.com/PathRobotics" },
+    { name: "Twitter", url: "https://twitter.com/pathrobotics" },
+    { name: "Instagram", url: "https://www.instagram.com/pathrobotics/" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/company/path-robotics/" },
+    { name: "Medium", url: "https://medium.com/@PathRobotics" },
+  ];
+  
+  export const navLinks = [
+    { name: "Home", url: "/" },
+    { name: "Demo", url: "/demo" },
+    { name: "Careers", url: "/careers" },
+    { name: "Contact", url: "/contact" },
+    { name: "About", url: "/about" },
+    { name: "Blog", url: "/blog" },
+  ];
+  
+  export const legalLinks = [
+    { name: "Terms", url: "/terms-and-conditions" },
+    { name: "Privacy Policy", url: "/privacy-policy" },
+  ];
+  
