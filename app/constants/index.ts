@@ -55,7 +55,7 @@ export const socialLinks = [
   ];
   
 
-export   const navItems = [
+export const navItems = [
     {
       link: "/",
       title: "About"
