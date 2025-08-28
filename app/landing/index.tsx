@@ -8,8 +8,6 @@ import { PreModelsSection } from '~/components/sections/pre-models';
 import { SlidesSection } from '~/components/sections/slides';
 import { useEffect } from 'react';
 
-// Register GSAP plugins only on the client to avoid SSR crashes
-// caused by accessing window/document during server rendering
 const useRegisterGsap = () => {
   useEffect(() => {
     let isActive = true;
@@ -20,7 +18,6 @@ const useRegisterGsap = () => {
         if (!isActive) return;
         gsapModule.gsap.registerPlugin(scrollTriggerModule.ScrollTrigger);
       } catch {
-        // no-op on server or if module fails to load
       }
     })();
     return () => {

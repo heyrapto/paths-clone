@@ -54,3 +54,18 @@ export const socialLinks = [
     { name: "Privacy Policy", url: "/privacy-policy" },
   ];
   
+
+export   const navItems = [
+    {
+      link: "/",
+      title: "About"
+    },
+    {
+      link: "/",
+      title: "Careers"
+    },
+    {
+      link: "/",
+      title: "Demo"
+    },
+]

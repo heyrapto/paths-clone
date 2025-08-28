@@ -1,17 +1,60 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useMobile } from "../../hooks/use-mobile"
+import { navItems } from "~/constants"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export const Navbar = () => {
   const { isDesktop } = useMobile()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const mobileNavRef = useRef(null)
+  const linksRef = useRef<any>([])
+  const tl = useRef<any>(null)
 
   const toggleMenu = () => {
+    if(isMenuOpen){
+      tl.current.reverse();
+    } else {
+      tl.current.play();
+    }
     setIsMenuOpen(!isMenuOpen)
   }
 
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
+
+  useGSAP(() => {
+    gsap.set(mobileNavRef.current, { xPercent: 100 });
+    gsap.set(linksRef.current, { autoAlpha: 0, x: -20 });
+  
+    tl.current = gsap.timeline({ paused: true })
+      .to(mobileNavRef.current, {
+        xPercent: 0,
+        duration: 1,
+        ease: "power3.out"
+      })
+      .to(linksRef.current, {
+        autoAlpha: 1,
+        x: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: "power2.out"
+      }, "<");
+  });  
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+  
+    // cleanup in case component unmounts while menu is open
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isMenuOpen])
 
     return (
       <>
@@ -43,7 +86,7 @@ export const Navbar = () => {
       </header>
       ) :
       (
-        <header className="header_header____5Dq" data-scroll-section="true">
+      <header className="header_header____5Dq" data-scroll-section="true">
       <div className="header_inner__eSf6j">
         {/* Logo / Home Link */}
         <a className="header_home__MEQWY no-decoration" href="/">
@@ -86,24 +129,19 @@ export const Navbar = () => {
 
           <nav
             className="menu-button_menu__4NK0H"
-            style={{ transform: isMenuOpen ? "translateX(0%)" : "translateX(100%)" }}
+            ref={mobileNavRef}
           >
             <ul>
-              <li style={{ opacity: isMenuOpen ? 1 : 0, transform: isMenuOpen ? "translateX(0px)" : "translateX(20px)" }}>
-                <a href="/about" onClick={closeMenu}>
-                  <h4 className="h4">About</h4>
+              {navItems.map((item, index) => (
+                <li 
+                key={index} 
+                ref={(el) => (linksRef.current[index] = el) as any}
+                >
+                <a href={item.link} onClick={closeMenu}>
+                  <h4 className="h4">{item.title}</h4>
                 </a>
               </li>
-              <li style={{ opacity: isMenuOpen ? 1 : 0, transform: isMenuOpen ? "translateX(0px)" : "translateX(20px)" }}>
-                <a href="/careers" onClick={closeMenu}>
-                  <h4 className="h4">Careers</h4>
-                </a>
-              </li>
-              <li style={{ opacity: isMenuOpen ? 1 : 0, transform: isMenuOpen ? "translateX(0px)" : "translateX(20px)" }}>
-                <a href="/demo" onClick={closeMenu}>
-                  <h4 className="h4">Demo</h4>
-                </a>
-              </li>
+              ))}
             </ul>
           </nav>
         </div>
