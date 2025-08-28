@@ -118,7 +118,7 @@ export const SlidesSection = () => {
               transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${
                 index * 60
               }, 0, 1)`,
-              opacity: index === activeSlide ? 0.75 : 1,
+              opacity: index === activeSlide ? 1 : 0.5,
               minHeight: '100vh', 
             }}
           >
