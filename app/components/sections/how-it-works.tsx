@@ -36,16 +36,28 @@ export const HowItWorksSection = () => {
         );
       }
     
-      // Fade out (skip last aside)
+      // Two-stage exit: scroll up then fade (skip last aside)
       if (i < arr.length - 1) {
+        // Stage 1: Scroll up naturally (pushed by next slide)
         gsap.to(el, {
-          opacity: 0,
-          y: -40,
-          ease: "power1.out",
+          y: -80,
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: el,
-            start: "top 30%",
-            end: "bottom top",
+            start: "top 5%",   
+            end: "top -10%",   
+            scrub: true,
+          },
+        });
+        
+        // Stage 2: Fade out after scrolling up
+        gsap.to(el, {
+          opacity: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top -10%",  // Start fading after scroll-up completes
+            end: "top -20%",    // Quick fade
             scrub: true,
           },
         });
