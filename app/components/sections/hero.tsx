@@ -26,10 +26,6 @@ export const HeroSection = () => {
         const handleScroll = () => {
             const heroRect = hero.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
-            const heroHeight = hero.offsetHeight;
-            const totalScroll = viewportHeight + heroHeight;
-
-            
 
             // calculate how much of the hero section has been scrolled
             const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / viewportHeight));
