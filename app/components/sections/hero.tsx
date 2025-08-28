@@ -9,6 +9,8 @@ export const HeroSection = () => {
     const { isDesktop } = useMobile()
 
     useEffect(() => {
+        if(!isDesktop) return;
+
         const hero = heroRef.current;
         const header1 = header1Ref.current;
         const header2 = header2Ref.current;
@@ -24,6 +26,10 @@ export const HeroSection = () => {
         const handleScroll = () => {
             const heroRect = hero.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
+            const heroHeight = hero.offsetHeight;
+            const totalScroll = viewportHeight + heroHeight;
+
+            
 
             // calculate how much of the hero section has been scrolled
             const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / viewportHeight));
@@ -65,7 +71,7 @@ export const HeroSection = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [isDesktop]);
 
     return (
         <>
