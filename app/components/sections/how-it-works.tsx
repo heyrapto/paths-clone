@@ -17,13 +17,14 @@ import gsap from "gsap";
           el,
           { y: 0 },
           {
-            y: -400, // how much you want them to move up
+            y: -300, // how much you want them to move up
             ease: "none",
             scrollTrigger: {
               trigger: el,
               start: "top bottom", // when the top of aside hits bottom of viewport
               end: "bottom top",   // until it leaves the viewport
               scrub: true,         // ties animation progress to scroll
+              markers: true
             },
           }
         );
@@ -36,7 +37,7 @@ import gsap from "gsap";
           const thirdSlide = slidesRef.current[2];
           if (thirdSlide) {
             gsap.to(stripesRef.current, {
-              yPercent: -10,
+              yPercent: -50,
               ease: "none",
               scrollTrigger: {
                 trigger: thirdSlide,
@@ -87,6 +88,7 @@ import gsap from "gsap";
                 </div>
               </div>
               <aside
+                className="slide-aside"
                 style={{
                     position: 'static',
                     top: `calc(10vh + ${index * 2}rem)`,
