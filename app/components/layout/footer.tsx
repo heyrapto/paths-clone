@@ -126,7 +126,7 @@ export const Footer = () => {
                     ))}
                   </nav>
                   <button className="s text-muted footer_back-to-top__4j2uU">
-                    Back to Top
+                    <a href="#hero">Back to Top</a>
                   </button>
                 </div>
 

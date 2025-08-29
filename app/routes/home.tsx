@@ -4,8 +4,10 @@ import { ReactLenis } from "lenis/react";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Paths" },
+    { name: "description", content: "Welcome to Paths!" },
+    // { name: "viewport", content: "width=device-width, initial-scale=1" },
+    // { link: [{rel: "icon", href: "/favicon.ico"}] }
   ];
 }
 
