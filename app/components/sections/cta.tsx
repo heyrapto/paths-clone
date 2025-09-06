@@ -9,7 +9,7 @@ export const FirstCTASection = () => {
   <section className="home_first-cta__pTCzU">
   <h3 className="home_title__svGc_ h1 or-7-col">See for Yourself</h3>
   <aside className="home_action__ojUj6">
-      <a className="text-bold button_button__Q9XfT" href="/demo">Book a Demo</a>
+      <a className="text-bold button_button__Q9XfT" href="/demo">Learn More</a>
   </aside>
   </section>
     ): 
@@ -20,7 +20,7 @@ export const FirstCTASection = () => {
         </h3>
         <aside className="home_action__ojUj6">
           <a href="" className="text-bold button_button__Q9XfT">
-          Book a Demo
+          Learn More
           </a>
         </aside>
       </section>
@@ -42,7 +42,7 @@ export const SecondCTASection = () => {
         </div>
         <h3 className="home_title__svGc_ h1 or-7-col">See for Yourself</h3>
         <aside className="home_action__ojUj6">
-          <a className="text-bold button_button__Q9XfT" href="/demo">Book a Demo</a>
+          <a className="text-bold button_button__Q9XfT" href="/demo">Learn More</a>
         </aside>
       </section>
       ): 
@@ -53,7 +53,7 @@ export const SecondCTASection = () => {
           </h3>
           <aside className="home_action__ojUj6">
             <a href="" className="text-bold button_button__Q9XfT">
-            Book a Demo
+            Learn More
             </a>
           </aside>
         </section>
