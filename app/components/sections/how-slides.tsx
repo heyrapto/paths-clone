@@ -14,7 +14,7 @@ export const HowSlidesSection = () => {
 
         <section className="home_how__tz4hY">
           <p className="h2 mb-1">How It Works</p>
-          <p className="h2 text-muted">With the Path Robotics system, you'll never have to worry about rework, part placement, perfect parts, or robot programming ever again.</p>
+          <p className="h2 text-muted">With our decentralized robotics system, you’ll never have to worry about silos, integration, or complex programming again.</p>
         </section>
         <HowItWorksSection />
         </>

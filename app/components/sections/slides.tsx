@@ -4,20 +4,21 @@ import { useMobile } from "../../hooks/use-mobile";
 const slidesData = [
   {
     id: "no-programming",
-    title: "No Programming",
-    description: "Even in high mix, high variance, low volume environments.",
+    title: "Modular Machines",
+    description: "Modular services connect across co-chains, sharing data and features seamlessly.",
   },
   {
     id: "zero-capex",
-    title: "Zero CapEx",
-    description: "No upfront costs with our pay-as-you-go subscription model.",
+    title: "Utility Proof",
+    description: "PoU rewards real, useful work with trackable value from robotics and applications.",
   },
   {
     id: "risk-free-deployment",
-    title: "Risk-free Deployment",
-    description: "All preventative maintenance needs are covered by Path.",
+    title: "Custom Co-Chains",
+    description: "Launch tailored co-chains for your hardware ecosystem with storage, access, and compute built in.",
   },
 ];
+
 
 export const SlidesSection = () => {
   const [activeSlide, setActiveSlide] = useState<any>(0);

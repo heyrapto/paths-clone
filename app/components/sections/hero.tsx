@@ -84,7 +84,7 @@ export const HeroSection = () => {
                             Truly
                         </h2>
                         <h1 className="h1 ol-5-col" id="header_2" ref={header2Ref}>
-                            Autonomous Welding
+                            Decentralized Robotics
                         </h1>
                     </div>
                     <div aria-hidden="true" className="stripes_wrapper__rRsa5">
@@ -107,7 +107,7 @@ export const HeroSection = () => {
                         </defs>
                     </svg>
                     <p className="home_callout__haRsE s or-15-col">
-                        We create manufacturing robots that autonomously scan, position, and weld your parts without the need for skilled welders or robot programmers.
+                    A Proof-of-Utility (PoU) Model Serving as the Base Layer for the Robotics-Enabled Economy
                     </p>
                 </section>
             ) : (
