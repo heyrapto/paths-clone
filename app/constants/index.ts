@@ -2,9 +2,9 @@ export const slides = [
     {
       id: "it-sees",
       number: "01",
-      title: "It Sees",
+      title: "It Computes",
       description:
-        "The Path system scans and creates a 3D model of each part. Our proprietary sensors are built to see highly reflective surfaces and survive harsh manufacturing environments.",
+        "Powering the processing behind robotics and decentralized applications, enabling secure, reliable, and scalable computations.",
       scrollOffset: "0%",
       icon: "/mainslides.svg",
       mobileIcon: "/mobile/it-sees.svg"
@@ -12,9 +12,9 @@ export const slides = [
     {
       id: "it-understands",
       number: "02",
-      title: "It Understands",
+      title: "It Stores",
       description:
-        "The Path system is built on proprietary AI. It analyzes the sensor data on the fly to understand each part individually. There's no need for perfect, identical parts or precise positioning in the cell.",
+        "Providing decentralized data storage, keeping your data safe, available, and censorship-resistant.",
       scrollOffset: "90%",
       icon: null,
       mobileIcon: "/mobile/it-understands.svg"
@@ -22,9 +22,9 @@ export const slides = [
     {
       id: "it-welds",
       number: "03",
-      title: "It Welds",
+      title: "It Access",
       description:
-        "The Path system understands welding and adapts throughout the process. As it goes, it creates optimal robotic paths and part positioning to produce high quality welds.",
+        "Seamless and secure connectivity to robotics and dApps, giving users instant, verifiable interactions from anywhere.",
       scrollOffset: "180%",
       icon: null,
       mobileIcon: "/mobile/it-welds.svg"

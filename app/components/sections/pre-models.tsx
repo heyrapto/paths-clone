@@ -1,48 +1,59 @@
 import { useMobile } from "~/hooks/use-mobile";
 
+const preModelsData = {
+  intro: "One network doesn’t fit all. Modulr provides specialized co-chains built for robotics, AI, web, and beyond — each designed to power real-world utility at scale.",
+  models: [
+    {
+      name: "Robotics",
+      desktop: {
+        images: ["/aw2-1.png", "/aw2-2.png"],
+      },
+      mobile: {
+        images: [
+          "//images.ctfassets.net/mluanev0pzgf/34Ve7t1bwSqSmzP8DkueqU/779114849e5f5078c5d26f3614407caf/Group_7765.png?q=95",
+          "//images.ctfassets.net/mluanev0pzgf/41zv0aAtWEXL1j89pdiJzF/6be5101d48e830964b3a372f9e790bc8/Frame_7862.png?q=95",
+        ],
+      },
+      caption:
+        "The robotics chain. Built to coordinate fleets, swarms, and real-world machines with trust, precision, and on-chain rewards for real output.",
+    },
+    {
+      name: "Web",
+      desktop: {
+        images: ["/aw3-1.png", "/aw3-2.png"],
+      },
+      mobile: {
+        images: [
+          "//images.ctfassets.net/mluanev0pzgf/3FvOuZxZiMs9lHQHoznjWT/34cf997250b0917fbfed39839b14826a/Boom_Arm_Cell_Orthographic_Perspective__1_.png?q=95",
+          "//images.ctfassets.net/mluanev0pzgf/2srW5MC8ACP5KRBzp6yABR/6ff91e9721e36cf9c4e3720ed71ea1b0/Boom_Arm_Cell_Orthographic_Perspective_2.png?q=95",
+        ],
+      },
+      caption:
+        "A Web 4.0 system replacing bulky websites with modular updates. Earn AdCoin for engagement, with built-in naming and age/content verification tools.",
+    },
+    {
+      name: "AI",
+      desktop: {
+        images: ["/aw3-1.png", "/aw3-2.png"],
+      },
+      mobile: {
+        images: [
+          "//images.ctfassets.net/mluanev0pzgf/3FvOuZxZiMs9lHQHoznjWT/34cf997250b0917fbfed39839b14826a/Boom_Arm_Cell_Orthographic_Perspective__1_.png?q=95",
+          "//images.ctfassets.net/mluanev0pzgf/2srW5MC8ACP5KRBzp6yABR/6ff91e9721e36cf9c4e3720ed71ea1b0/Boom_Arm_Cell_Orthographic_Perspective_2.png?q=95",
+        ],
+      },
+      caption:
+        "A flexible AI layer made of small, task-specific models. Requests are routed to the right model for faster, more efficient, and hardware-friendly execution.",
+    },
+  ],
+};
+
 export const PreModelsSection = () => {
   const { isDesktop } = useMobile();
+
   return (
     <>
-    {isDesktop ? (
-    <>
-      <section className="home_pre-models__5Wvou">
-          <aside>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 21" className="home_arrow-icon__g__27">
-              <path stroke="currentColor" strokeMiterlimit="10" d="m1 1 20 19M5 20h16V5"></path>
-            </svg>
-          </aside>
-          <p className="p">One size doesn't fit all, so we have options for making high-quality finish welding effortless and economical for manufacturers.</p>
-        </section>
-
-        <section className="home_model__T_6WI">
-          <div aria-hidden="true" className="stripes_wrapper__rRsa5">
-            <span className="stripes_line__0mC2c stripes_b__ZbuGG"></span>
-          </div>
-          <h3 className="h3 home_title__svGc_">AW-2</h3>
-          <div className="home_content__fn2aj">
-            <img src="/aw2-1.png" alt="" className="home_img-large__12lSA"/>
-            <img src="/aw2-2.png" alt="" className="home_img-small__A4lAB"/>
-            <p className="home_caption__D0wAC ol-3-col xs">The AW-2 brings autonomous finish welding to small and mid-size parts. The flexibility of the AW-2 eliminates the need for custom, rigid fixturing, and precise part placement.</p>
-          </div>
-        </section>
-
-        <section className="home_model__T_6WI">
-          <div aria-hidden="true" className="stripes_wrapper__rRsa5">
-            <span className="stripes_line__0mC2c stripes_b__ZbuGG"></span>
-          </div>
-          <h3 className="h3 home_title__svGc_">AW-3</h3>
-          <div className="home_content__fn2aj">
-            <img src="/aw3-1.png" alt="" className="home_img-large__12lSA"/>
-            <img src="/aw3-2.png" alt="" className="home_img-small__A4lAB"/>
-            <p className="home_caption__D0wAC ol-3-col xs">The AW-3 brings autonomous finish welding to longer parts that don't fit in smaller welding cells. The AW-3 can have one or two welding zones, where one side can weld while the other side loads and unloads.</p>
-          </div>
-        </section>
-    </>
-        ) :
-        (
-          <>
-      {/* Pre-Models Intro */}
+      {/* Intro Section */}
       <section className="home_pre-models__5Wvou">
         <aside>
           <svg
@@ -58,59 +69,58 @@ export const PreModelsSection = () => {
             />
           </svg>
         </aside>
-        <p className="p">
-          One size doesn’t fit all, so we have options for making high-quality
-          finish welding effortless and economical for manufacturers.
-        </p>
+        <p className="p">{preModelsData.intro}</p>
       </section>
 
-      {/* AW-2 */}
-      <section className="home_model__T_6WI">
-        <h3 className="h3 home_title__svGc_">AW-2</h3>
-        <div className="home_content__fn2aj">
-          <img
-            src="//images.ctfassets.net/mluanev0pzgf/34Ve7t1bwSqSmzP8DkueqU/779114849e5f5078c5d26f3614407caf/Group_7765.png?q=95"
-            alt="AW-2 welding model large view"
-            className="home_img-large__12lSA"
-          />
-          <img
-            src="//images.ctfassets.net/mluanev0pzgf/41zv0aAtWEXL1j89pdiJzF/6be5101d48e830964b3a372f9e790bc8/Frame_7862.png?q=95"
-            alt="AW-2 welding model small view"
-            className="home_img-small__A4lAB"
-          />
-          <p className="home_caption__D0wAC s">
-            The AW-2 brings autonomous finish welding to small and mid-size
-            parts. The flexibility of the AW-2 eliminates the need for custom,
-            rigid fixturing, and precise part placement.
-          </p>
-        </div>
-      </section>
+      {/* Models */}
+      {preModelsData.models.map((model, idx) => (
+        <section key={idx} className="home_model__T_6WI">
+          {isDesktop && (
+            <div aria-hidden="true" className="stripes_wrapper__rRsa5">
+              <span className="stripes_line__0mC2c stripes_b__ZbuGG"></span>
+            </div>
+          )}
 
-      {/* AW-3 */}
-      <section className="home_model__T_6WI">
-        <h3 className="h3 home_title__svGc_">AW-3</h3>
-        <div className="home_content__fn2aj">
-          <img
-            src="//images.ctfassets.net/mluanev0pzgf/3FvOuZxZiMs9lHQHoznjWT/34cf997250b0917fbfed39839b14826a/Boom_Arm_Cell_Orthographic_Perspective__1_.png?q=95"
-            alt="AW-3 welding model large view"
-            className="home_img-large__12lSA"
-          />
-          <img
-            src="//images.ctfassets.net/mluanev0pzgf/2srW5MC8ACP5KRBzp6yABR/6ff91e9721e36cf9c4e3720ed71ea1b0/Boom_Arm_Cell_Orthographic_Perspective_2.png?q=95"
-            alt="AW-3 welding model small view"
-            className="home_img-small__A4lAB"
-          />
-          <p className="home_caption__D0wAC s">
-            The AW-3 brings autonomous finish welding to longer parts that don’t
-            fit in smaller welding cells. The AW-3 can have one or two welding
-            zones, where one side can weld while the other side loads and
-            unloads.
-          </p>
-        </div>
-      </section>
-    </>
-        )
-      }
+          <h3 className="h3 home_title__svGc_">{model.name}</h3>
+          <div className="home_content__fn2aj">
+            {isDesktop ? (
+              <>
+                <img
+                  src={model.desktop.images[0]}
+                  alt={`${model.name} large view`}
+                  className="home_img-large__12lSA"
+                />
+                <img
+                  src={model.desktop.images[1]}
+                  alt={`${model.name} small view`}
+                  className="home_img-small__A4lAB"
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  src={model.mobile.images[0]}
+                  alt={`${model.name} large view`}
+                  className="home_img-large__12lSA"
+                />
+                <img
+                  src={model.mobile.images[1]}
+                  alt={`${model.name} small view`}
+                  className="home_img-small__A4lAB"
+                />
+              </>
+            )}
+
+            <p
+              className={`home_caption__D0wAC ${
+                isDesktop ? "ol-3-col xs" : "s"
+              }`}
+            >
+              {model.caption}
+            </p>
+          </div>
+        </section>
+      ))}
     </>
   );
 };
