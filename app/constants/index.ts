@@ -2,7 +2,7 @@ export const slides = [
     {
       id: "it-sees",
       number: "01",
-      title: "It Computes",
+      title: "It Verifies",
       description:
         "Powering the processing behind robotics and decentralized applications, enabling secure, reliable, and scalable computations.",
       scrollOffset: "0%",
@@ -12,7 +12,7 @@ export const slides = [
     {
       id: "it-understands",
       number: "02",
-      title: "It Stores",
+      title: "It Scores",
       description:
         "Providing decentralized data storage, keeping your data safe, available, and censorship-resistant.",
       scrollOffset: "90%",
@@ -22,7 +22,7 @@ export const slides = [
     {
       id: "it-welds",
       number: "03",
-      title: "It Access",
+      title: "It Rewards",
       description:
         "Seamless and secure connectivity to robotics and dApps, giving users instant, verifiable interactions from anywhere.",
       scrollOffset: "180%",

@@ -4,7 +4,7 @@ const featuresData = {
   title: "Decentralized Robotics, Infinite Scale",
   groups: [
     {
-      heading: "Modular Architecture",
+      heading: "Identity Layer",
       items: [
         "Composable co-chains",
         "Seamless data sharing",
@@ -12,7 +12,7 @@ const featuresData = {
       ],
     },
     {
-      heading: "Proof of Utility",
+      heading: "Reputation Engine",
       items: [
         "Rewards real work",
         "Tracks verifiable output",
@@ -20,7 +20,7 @@ const featuresData = {
       ],
     },
     {
-      heading: "Custom Co-Chains",
+      heading: "Adaptive Networks",
       items: [
         "Tailored to hardware ecosystems",
         "Built-in compute and storage",

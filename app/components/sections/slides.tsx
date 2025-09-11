@@ -5,7 +5,7 @@ const slidesData = [
   {
     id: "no-programming",
     title: "Modular Machines",
-    description: "Modular services connect across co-chains, sharing data and features seamlessly.",
+    description: "Our architecture is modular at its core. Robots, AI models, and applications connect across specialized co-chains that seamlessly exchange verified data.",
   },
   {
     id: "zero-capex",
