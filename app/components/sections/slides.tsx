@@ -5,7 +5,7 @@ const slidesData = [
   {
     id: "no-programming",
     title: "Modular Machines",
-    description: "Our architecture is modular at its core. Robots, AI models, and applications connect across specialized co-chains that seamlessly exchange verified data.",
+    description: "Modular services connect across co-chains, sharing data and features seamlessly.",
   },
   {
     id: "zero-capex",
@@ -24,10 +24,7 @@ export const SlidesSection = () => {
   const [activeSlide, setActiveSlide] = useState<any>(0);
   const sectionRef = useRef<HTMLDivElement | any>(null);
   const slideRefs = useRef<HTMLDivElement | any>([]);
-  const { isDesktop } = useMobile();
-
-  // Fallback: ensure we always have a valid active slide
-  const safeActiveSlide = Math.max(0, Math.min(activeSlide, slidesData.length - 1));
+  const { isDesktop } = useMobile()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,51 +48,30 @@ export const SlidesSection = () => {
         const slideRect = slide.getBoundingClientRect();
         const slideTop = slideRect.top;
         const slideBottom = slideRect.bottom;
-        const slideHeight = slideRect.height;
         
-        // More robust visibility calculation
+        // Calculate visibility percentage
         const visibleTop = Math.max(0, Math.min(slideBottom, viewportHeight) - Math.max(slideTop, 0));
-        const visibility = slideHeight > 0 ? visibleTop / slideHeight : 0;
+        const slideHeight = slideRect.height;
+        const visibility = visibleTop / slideHeight;
         
-        // Also check if slide center is in viewport
-        const slideCenter = slideTop + slideHeight / 2;
-        const centerInView = slideCenter >= 0 && slideCenter <= viewportHeight;
-        
-        // Prioritize slides whose center is in viewport
-        const adjustedVisibility = centerInView ? visibility + 0.5 : visibility;
-        
-        if (adjustedVisibility > maxVisibility) {
-          maxVisibility = adjustedVisibility;
+        if (visibility > maxVisibility) {
+          maxVisibility = visibility;
           mostVisibleSlide = index;
         }
       });
 
-      // Only update if we found a valid slide
-      if (maxVisibility > 0) {
-        setActiveSlide(mostVisibleSlide);
-      }
+      setActiveSlide(mostVisibleSlide);
     };
 
-    // Add scroll event listener with throttling
-    let ticking = false;
-    const throttledHandleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Initial check with a small delay to ensure refs are set
-    setTimeout(handleScroll, 100);
+    // Initial check
+    handleScroll();
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', throttledHandleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -121,10 +97,10 @@ export const SlidesSection = () => {
           {slidesData.map((_, i) => (
             <li
               key={i}
-              className={i === safeActiveSlide ? "indicators_active__YPE0D" : ""}
+              className={i === activeSlide ? "indicators_active__YPE0D" : ""}
               style={{
                 transition: 'opacity 0.3s ease',
-                opacity: i === safeActiveSlide ? 1 : 0.5
+                opacity: i === activeSlide ? 1 : 0.5
               }}
             >
               {String(i + 1).padStart(2, "0")}
@@ -143,17 +119,12 @@ export const SlidesSection = () => {
               transform: `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${
                 index * 60
               }, 0, 1)`,
+              opacity: index === activeSlide ? 1 : 0.5,
               minHeight: '100vh', 
             }}
           >
             <div className="home_slide__nf2Eh">
-              <div 
-                className="home_content__fn2aj"
-                style={{
-                  opacity: index === safeActiveSlide ? 1 : 0.5,
-                  transition: 'opacity 0.3s ease'
-                }}
-              >
+              <div className="home_content__fn2aj">
                 <h2 className="h1 or-3-col home_title__svGc_">{slide.title}</h2>
               </div>
               <aside>
