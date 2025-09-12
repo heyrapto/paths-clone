@@ -1,7 +1,7 @@
 import { useMobile } from "~/hooks/use-mobile";
 
 const preModelsData = {
-  intro: "One network doesn’t fit all. Modulr provides specialized co-chains built for robotics, AI, web, and beyond — each designed to power real-world utility at scale.",
+  intro: "The reputation layer proves skills and reliability, giving every robot measurable trust you can verify.",
   models: [
     {
       name: "Robotics",
@@ -15,7 +15,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "The robotics chain. Built to coordinate fleets, swarms, and real-world machines with trust, precision, and on-chain rewards for real output.",
+        "The robotics layer. Giving machines identities that prove skill, safety, and reliability — earning trust and rewards.",
     },
     {
       name: "Web",
@@ -29,7 +29,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "A Web 4.0 system replacing bulky websites with modular updates. Earn AdCoin for engagement, with built-in naming and age/content verification tools.",
+        "The web layer. Where robots showcase verifiable profiles, skills, and histories — powering transparent apps, dashboards, and marketplaces.",
     },
     {
       name: "AI",
@@ -43,7 +43,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "A flexible AI layer made of small, task-specific models. Requests are routed to the right model for faster, more efficient, and hardware-friendly execution.",
+        "The reputation engine. Driven by AI to detect anomalies, predict reliability, and transform machine behavior into trust scores — giving every robot measurable intelligence and verifiable accountability.",
     },
   ],
 };

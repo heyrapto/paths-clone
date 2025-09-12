@@ -4,18 +4,18 @@ import { useMobile } from "../../hooks/use-mobile";
 const slidesData = [
   {
     id: "no-programming",
-    title: "Modular Machines",
-    description: "Modular services connect across co-chains, sharing data and features seamlessly.",
+    title: "Modular By Design",
+    description: "Modular robots, AI, and apps connect across co-chains, exchanging verified data seamlessly.",
   },
   {
     id: "zero-capex",
     title: "Utility Proof",
-    description: "PoU rewards real, useful work with trackable value from robotics and applications.",
+    description: "Proof of Utility turns actions into verifiable value, giving robots trust through proven work.",
   },
   {
     id: "risk-free-deployment",
-    title: "Custom Co-Chains",
-    description: "Launch tailored co-chains for your hardware ecosystem with storage, access, and compute built in.",
+    title: "Utility Model",
+    description: "Proof of Utility rewards safe, reliable robots with skills, visibility, and fair contracts.”",
   },
 ];
 

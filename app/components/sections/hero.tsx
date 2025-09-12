@@ -81,10 +81,10 @@ export const HeroSection = () => {
                     />
                     <div className="home_heading__56sD2">
                         <h2 className="h1" id="header_1" ref={header1Ref}>
-                            Truly
+                        Truly
                         </h2>
                         <h1 className="h1 ol-5-col" id="header_2" ref={header2Ref}>
-                            Decentralized Robotics
+                        Autonomous Robotics
                         </h1>
                     </div>
                     <div aria-hidden="true" className="stripes_wrapper__rRsa5">
@@ -139,7 +139,7 @@ export const HeroSection = () => {
                             data-scroll-target="#hero"
                             data-scroll-offset="16%, 50%"
                         >
-                            Autonomous Welding
+                            Autonomous Robotics
                         </h1>
                     </div>
 
