@@ -1,33 +1,33 @@
 import { useMobile } from "../../hooks/use-mobile"
 
 const featuresData = {
-  title: "Decentralized Robotics, Infinite Scale",
+  title: "Decentralized Robotics. Infinite Scale.",
   groups: [
     {
       heading: "Identity Layer",
       items: [
-        "Composable co-chains",
-        "Seamless data sharing",
-        "Silo-free services",
+        "Secure digital identities",
+        "Cryptographic credentials",
+        "Accountability everywhere",
       ],
     },
     {
       heading: "Reputation Engine",
       items: [
-        "Rewards real work",
-        "Tracks verifiable output",
-        "Incentivizes robotics at scale",
+        "Scores performance & safety",
+        "Measures reliability & trust",
+        "Drives access & opportunity",
       ],
     },
     {
       heading: "Adaptive Networks",
       items: [
-        "Tailored to hardware ecosystems",
-        "Built-in compute and storage",
-        "Scalable, decentralized access",
+        "Specialized co-chains",
+        "Shared verified knowledge",
+        "Stronger through collaboration",
       ],
     },
-  ],
+  ],  
 }
 
 export const FeaturesSection = () => {
