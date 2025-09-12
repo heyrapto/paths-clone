@@ -107,7 +107,7 @@ export const HeroSection = () => {
                         </defs>
                     </svg>
                     <p className="home_callout__haRsE s or-15-col">
-                    A Proof-of-Utility (PoU) Model Serving as the Base Layer for the Robotics-Enabled Economy
+                    A global reputation infrastructure that gives every robot a secure digital identity, measurable reputation, and the ability to prove reliability, accountability, and skill in a decentralized economy.
                     </p>
                 </section>
             ) : (
@@ -170,9 +170,7 @@ export const HeroSection = () => {
 
                     {/* Callout Text */}
                     <p className="home_callout__haRsE s or-2-col">
-                        We create manufacturing robots that autonomously scan, position, and
-                        weld your parts without the need for skilled welders or robot
-                        programmers.
+                    A global reputation infrastructure that gives every robot a secure digital identity, measurable reputation, and the ability to prove reliability, accountability, and skill in a decentralized economy.
                     </p>
                 </section>
             )
