@@ -6,7 +6,7 @@ export const HeroSection = () => {
     const header1Ref = useRef<HTMLHeadElement | any>(null);
     const header2Ref = useRef<HTMLHeadElement | any>(null);
     const imageRef = useRef<HTMLImageElement>(null);
-    const { isDesktop } = useMobile()
+    const { isDesktop } = useMobile();
 
     useEffect(() => {
         if(!isDesktop) return;

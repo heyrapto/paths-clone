@@ -8,7 +8,7 @@ export const HowSlidesSection = () => {
           <span className="stripes_line__0mC2c stripes_f__mnJYv"></span>
         </div>
         <div className="home_image-intermission__j98AZ">
-          <img src="/HIW-img.png" alt="" />
+          <img src="/HIW-img.svg" alt="" />
         </div>
       </section>
 

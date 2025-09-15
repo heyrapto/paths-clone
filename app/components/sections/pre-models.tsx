@@ -6,7 +6,7 @@ const preModelsData = {
     {
       name: "Robotics",
       desktop: {
-        images: ["/aw2-1.png", "/aw2-2.png"],
+        images: ["/robotics-1.png", "/robotics-2.png"],
       },
       mobile: {
         images: [
@@ -20,7 +20,7 @@ const preModelsData = {
     {
       name: "Web",
       desktop: {
-        images: ["/aw3-1.png", "/aw3-2.png"],
+        images: ["/web-1.png", "/web-2.png"],
       },
       mobile: {
         images: [
@@ -34,7 +34,7 @@ const preModelsData = {
     {
       name: "AI",
       desktop: {
-        images: ["/aw3-1.png", "/aw3-2.png"],
+        images: ["/ai-1.png", "/ai-2.png"],
       },
       mobile: {
         images: [
