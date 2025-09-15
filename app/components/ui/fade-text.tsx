@@ -10,7 +10,6 @@ export const FadeParagraph = ({ children }: { children: React.ReactNode }) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // when paragraph goes out of view (above), fade it
         setVisible(entry.intersectionRatio > 0.1);
       },
       { threshold: [0.1] }
