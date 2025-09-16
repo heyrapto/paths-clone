@@ -1,4 +1,4 @@
-import { useMobile } from "../../hooks/use-mobile"
+import { useMobile } from "../../hooks/use-mobile";
 
 const featuresData = {
   title: "Decentralized Robotics. Infinite Scale.",
@@ -6,32 +6,29 @@ const featuresData = {
     {
       heading: "Identity Layer",
       items: [
-        "Secure digital identities",
-        "Cryptographic credentials",
-        "Accountability everywhere",
+        "Every robot begins with a secure digital identity anchored in cryptography.",
+        "Credentials and histories are preserved to ensure accountability across all environments.",
       ],
     },
     {
       heading: "Reputation Engine",
       items: [
-        "Scores performance & safety",
-        "Measures reliability & trust",
-        "Drives access & opportunity",
+        "Performance, safety, and reliability are continuously scored.",
+        "Trust becomes a measurable resource that drives access and opportunity.",
       ],
     },
     {
       heading: "Adaptive Networks",
       items: [
-        "Specialized co-chains",
-        "Shared verified knowledge",
-        "Stronger through collaboration",
+        "Specialized co-chains emerge for different domains.",
+        "Each network grows stronger as robots collaborate and share verified knowledge.",
       ],
     },
-  ],  
-}
+  ],
+};
 
 export const FeaturesSection = () => {
-  const { isDesktop } = useMobile()
+  const { isDesktop } = useMobile();
 
   return (
     <section className="home_features__rVAqr">
@@ -82,5 +79,5 @@ export const FeaturesSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

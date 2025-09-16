@@ -1,7 +1,8 @@
 import { useMobile } from "~/hooks/use-mobile";
 
 const preModelsData = {
-  intro: "The reputation layer proves skills and reliability, giving every robot measurable trust you can verify.",
+  intro:
+    "The reputation layer unlocks a transparent world of robotics and intelligence where every machine carries proof of its skills and reliability.",
   models: [
     {
       name: "Robotics",
@@ -15,7 +16,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "The robotics layer. Giving machines identities that prove skill, safety, and reliability — earning trust and rewards.",
+        "The robotics layer ensures that every machine can be trusted, every action can be verified, and every contribution earns recognition in a shared economy of autonomy.",
     },
     {
       name: "Web",
@@ -29,7 +30,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "The web layer. Where robots showcase verifiable profiles, skills, and histories — powering transparent apps, dashboards, and marketplaces.",
+        "The web layer is where reputation becomes visible. Robots display verifiable profiles, credentials, and performance histories through interfaces that anyone can access.",
     },
     {
       name: "AI",
@@ -43,7 +44,7 @@ const preModelsData = {
         ],
       },
       caption:
-        "The reputation engine. Driven by AI to detect anomalies, predict reliability, and transform machine behavior into trust scores — giving every robot measurable intelligence and verifiable accountability.",
+        "AI builds reputation by analyzing performance, spotting anomalies, and predicting reliability, turning machine actions into measurable trust.",
     },
   ],
 };
