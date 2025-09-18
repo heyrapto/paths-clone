@@ -13,7 +13,7 @@ export const Footer = () => {
         <>
           {/* Prefooter Image */}
           <section className="home_prefooter-img__mb9xG">
-            <img src="/home-inner-2.png" alt="" />
+            <img src="/footer.png" alt="" />
           </section>
 
           {/* Video Modal */}

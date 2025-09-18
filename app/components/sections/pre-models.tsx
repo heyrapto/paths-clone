@@ -7,7 +7,7 @@ const preModelsData = {
     {
       name: "Robotics",
       desktop: {
-        images: ["/robotics-1.png", "/robotics-2.png"],
+        images: ["/robotics-1.svg", "/robotics-2.svg"],
       },
       mobile: {
         images: [
@@ -21,7 +21,7 @@ const preModelsData = {
     {
       name: "Web",
       desktop: {
-        images: ["/web-1.png", "/web-2.png"],
+        images: ["/web-1.svg", "/web-2.svg"],
       },
       mobile: {
         images: [
@@ -35,7 +35,7 @@ const preModelsData = {
     {
       name: "AI",
       desktop: {
-        images: ["/ai-1.png", "/ai-2.png"],
+        images: ["/ai-1.svg", "/ai-2.svg"],
       },
       mobile: {
         images: [
@@ -89,6 +89,7 @@ export const PreModelsSection = () => {
                 <img
                   src={model.desktop.images[0]}
                   alt={`${model.name} large view`}
+                  // width={700}
                   className="home_img-large__12lSA"
                 />
                 <img
