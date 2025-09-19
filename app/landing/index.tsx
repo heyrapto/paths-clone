@@ -6,28 +6,8 @@ import { HeroSection } from '~/components/sections/hero';
 import { HowSlidesSection } from '~/components/sections/how-slides';
 import { PreModelsSection } from '~/components/sections/pre-models';
 import { SlidesSection } from '~/components/sections/slides';
-import { useEffect } from 'react';
-
-const useRegisterGsap = () => {
-  useEffect(() => {
-    let isActive = true;
-    (async () => {
-      try {
-        const gsapModule = await import('gsap');
-        const scrollTriggerModule = await import('gsap/ScrollTrigger');
-        if (!isActive) return;
-        gsapModule.gsap.registerPlugin(scrollTriggerModule.ScrollTrigger);
-      } catch {
-      }
-    })();
-    return () => {
-      isActive = false;
-    };
-  }, []);
-};
 
 const LandingPage = () => {
-  useRegisterGsap();
   return (
     <div style={{ ["--bg" as any]: "var(--black)", ["--fg" as any]: "var(--white)" }}>
       <main style={{backgroundColor:"var(--bg)",color:"var(--fg)"}}>
