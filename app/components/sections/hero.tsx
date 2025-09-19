@@ -114,7 +114,7 @@ export const HeroSection = () => {
                 <section className="home_hero__vJLkN" id="hero">
                     {/* Hero Image */}
                     <img
-                        src="//images.ctfassets.net/mluanev0pzgf/3LNzHTEmYMN4thtInYMRU2/2ddc9cf6622954465319f81414317096/hero.png?q=95"
+                        src="/hero.png"
                         alt="Hero"
                         className="home_hero-image__QFiue is-inview"
                         data-scroll="true"

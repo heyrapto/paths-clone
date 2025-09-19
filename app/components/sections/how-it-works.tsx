@@ -1,7 +1,9 @@
 import { slides } from "~/constants";
 import { useMobile } from "../../hooks/use-mobile";
 import { useRef, useEffect } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export const HowItWorksSection = () => {
   const { isDesktop } = useMobile();
