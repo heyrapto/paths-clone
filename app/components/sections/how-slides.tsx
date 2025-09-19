@@ -1,4 +1,4 @@
-import { HowItWorksSection } from "./how-it-works"
+import { HowItWorksSection } from "./how-it-works";
 
 export const HowSlidesSection = () => {
   return (
@@ -14,9 +14,14 @@ export const HowSlidesSection = () => {
 
       <section className="home_how__tz4hY">
         <p className="h2 mb-1">How It Works</p>
-        <p className="h2 text-muted">With our decentralized robotics system, you’ll never have to worry about silos, integration, or complex programming again.</p>
+        <p className="h2 text-muted">
+          Each robot holds a decentralized identity, builds a reputation score
+          from measurable performance, and proves its reliability with
+          cryptography. This creates instant trust, transparent accountability,
+          and seamless collaboration across industries.
+        </p>
       </section>
       <HowItWorksSection />
     </>
-  )
-}
+  );
+};
